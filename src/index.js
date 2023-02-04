@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require("cors")
 const route = require('./route/route')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 mongoose.set('strictQuery',true)
 
@@ -17,6 +19,6 @@ mongoose.connect("mongodb+srv://Chaitanya012:uEEYLDPlUa999wEK@cluster0.0zsen34.m
 app.use('/',route)
 
 app.listen( 3000 , function(){
-    console.log('Express app running on port '+ (3000));
+    console.log('Express app running on port '+ (4000));
 })
 

@@ -8,10 +8,12 @@ const  {createorder,getorder}=require('../controller/ordercontroller')
 
 const  {authenication ,authorisation} = require('../middleware/Auth')
 
-
+// ---------------user APi----------------//
 router.post('/url/add-user',createuser)
 
 router.post('/url/login-user',login)
+
+//-------------order API ----------//
 
 router.post('/url/add-order',authenication ,authorisation ,createorder)
 
